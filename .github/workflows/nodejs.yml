@@ -16,21 +16,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
+        working-directory: Software testing assignment
 
       - name: Run tests
         run: npm test -- --coverage
+        working-directory: Software testing assignment
 
       - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-# trigger workflow 
+        working-directory: Software testing assignment
