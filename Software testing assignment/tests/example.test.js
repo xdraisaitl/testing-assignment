@@ -61,7 +61,7 @@ describe("toString.js", () => {
     expect(toString(123)).toBe("123");
   });
 
-  test("toString(null) returns ''", () => {
-    expect(toString(null)).toBe("");
+  test('toString(null) returns "null"', () => {
+    expect(toString(null)).toBe("null");
   });
 });
